@@ -1,10 +1,21 @@
+@font-face{
+  font-family: 'vollkorn';
+  src:local('vollkorn'), url('../src/font/vollkorn.ttf') format('truetype');
+}
+
+@font-face{
+  font-family: 'muli';
+  src:local('muli'), url('../src/font/muli.ttf') format('truetype');
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'vollkorn', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #F7FAF7 !important;
 }
 
 code {

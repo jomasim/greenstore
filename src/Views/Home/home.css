@@ -1,0 +1,96 @@
+.image-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 70vh !important;
+    background-image: url(../../assets/images/header.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+span{
+    display: flex;
+    align-items: center;
+}
+
+.title{
+    display: flex;
+    color: #fff;
+    font-weight: 300;
+    align-self: flex-start;
+    margin-left: 20px;
+    position: absolute;
+    top: 5px;
+}
+
+.basket {
+    background: #4E904A !important;
+    height: 40px;
+    border-radius: 8px;
+    border-color:#4E904A;
+    color: #fff !important;
+    position: absolute !important;
+    top: 20px;
+    right: 20px;
+    font-size: 16px;
+    font-family: vollkorn;
+}
+.basket .MuiButton-label {
+    text-transform: capitalize;
+    font-family: vollkorn;
+}
+.basket .MuiBadge-anchorOriginTopRightRectangle {
+    top: -20px;
+    right: -60px;
+}
+.nearest {
+    display: flex;
+    background: #E71B1B;
+    font-weight: 400;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 8px;
+    padding: 8px;
+}
+.delivery{
+    font-weight: 400;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 30px;
+}
+
+.MuiGrid-root.items-container.MuiGrid-item.MuiGrid-grid-xs-12 {
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.search-btn {
+    border-radius: 10px;
+    padding: 10px;
+    color: #949494;
+    background: #fff;
+    width: 500px;
+    margin-top: 80px;
+    height: 20px;
+    font-size: 15px;
+    background: url(/static/media/search.9c0e8855.svg) no-repeat 10px 7px;
+    background-size: 22px 29px;
+    padding-left: 40px;
+    background-color: #fff;
+    border: 0;
+    font-family: vollkorn;
+}
+input.search-btn:focus {
+    outline: none;
+}
+.category-title {
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+}
