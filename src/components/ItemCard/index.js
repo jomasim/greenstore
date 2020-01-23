@@ -9,11 +9,11 @@ export default function RecipeReviewCard() {
     return (
         <div className="card">
             <div className="card-header">
-                <span>Vegetables</span>
+                <span className="card-title">Vegetables</span>
             </div>
             <div className="card-content">
                 <div className="media">
-                    <img src={veges}  alt=""/>
+                    <img src={veges}  alt="...loading"/>
                 </div>
                 <div className="card-text">
                     <p>

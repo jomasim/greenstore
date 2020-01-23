@@ -1,0 +1,27 @@
+.menu{
+    color: #949494 !important;
+    background: #fff !important;
+}
+.active{
+    border-bottom: solid 4px #3b4e3b !important;
+}
+button.MuiButtonBase-root.MuiTab-root.MuiTab-textColorInherit:hover {
+    border-bottom: solid 4px #3b4e3b !important;
+}
+span.MuiTab-wrapper {
+    font-weight: 600;
+}
+.menu-right{
+    margin-left: auto !important;
+}
+@media(max-width:768px){
+    .menu {
+        display: none !important;
+    }
+}
+
+@media(min-width:768px){
+    .toggle-btn{
+        display: none !important;
+    }
+}
