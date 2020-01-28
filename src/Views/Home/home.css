@@ -82,8 +82,9 @@ span{
     align-items: center;
     justify-content: center;
     height: 200px;
-    background: #4f635c;
+    background: #5f6563;
     color: #fff;
+    margin-top: 200px;
 }
 .line{
     background: #fff;

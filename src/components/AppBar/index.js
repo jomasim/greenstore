@@ -6,6 +6,7 @@ import SearchIcon from "@material-ui/icons/SearchSharp";
 import MenuIcon from "@material-ui/icons/Menu";
 import Badge from "@material-ui/core/Badge";
 import ShoppingBasket from "@material-ui/icons/ShoppingBasketOutlined";
+import logo from "../../../src/assets/images/logo.svg";
 import MenuItem from "@material-ui/core/MenuItem";
 import "./appbar.css";
 
@@ -22,20 +23,23 @@ export default function ButtonAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <MenuItem className="menu-item active">Home</MenuItem>
-          <MenuItem className="menu-item" >Market</MenuItem>
-          <MenuItem className="menu-item" >Profiler</MenuItem>
-          <MenuItem className="menu-item" >Explore</MenuItem>
-          <div className="menu-right">
-            <IconButton edge="end" color="inherit" aria-label="search">
-              <SearchIcon />
-            </IconButton>{" "}
-            |
-            <IconButton edge="end" color="inherit" aria-label="search">
-              <Badge color="error" badgeContent="2">
-                <ShoppingBasket />
-              </Badge>
-            </IconButton>
+          <div className="menu-items"> 
+            <img src={logo} alt="store" className="logo"></img>
+            <MenuItem className="menu-item active">Home</MenuItem>
+            <MenuItem className="menu-item">Market</MenuItem>
+            <MenuItem className="menu-item">Profile</MenuItem>
+            <MenuItem className="menu-item">Explore</MenuItem>
+            <div className="menu-right">
+              <IconButton edge="end" color="inherit" aria-label="search">
+                <SearchIcon />
+              </IconButton>{" "}
+              |
+              <IconButton edge="end" color="inherit" aria-label="search">
+                <Badge color="error" badgeContent="2">
+                  <ShoppingBasket />
+                </Badge>
+              </IconButton>
+            </div>
           </div>
         </Toolbar>
       </AppBar>
