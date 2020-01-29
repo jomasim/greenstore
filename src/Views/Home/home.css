@@ -37,11 +37,9 @@ span{
     top: 20px;
     right: 20px;
     font-size: 16px;
-    font-family: vollkorn;
 }
 .basket .MuiButton-label {
     text-transform: capitalize;
-    font-family: vollkorn;
 }
 .basket .MuiBadge-anchorOriginTopRightRectangle {
     top: -20px;
@@ -73,7 +71,10 @@ span{
 }
 .grid-container{
     padding: 20px;
-    justify-content: center
+}
+.grid-main-content{
+    margin-top: 8px !important;
+    width: 70vw !important;
 }
 
 .footer-container{

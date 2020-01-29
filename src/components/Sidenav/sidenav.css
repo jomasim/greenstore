@@ -1,11 +1,12 @@
 .sidenav-container {
   margin-top: 10px;
   left: 0;
-  position: fixed;
+  position: static;
+  margin-left: 40px;
 }
 .menu-list {
   box-shadow: 0 5px 12px 0 rgba(83, 89, 98, 0.12);
-  width: 350px;
+  width: 310px;
   padding: 0px;
   margin: 0px;
 }
@@ -39,6 +40,9 @@
     position: static !important;
     width: 100%;
   }
+  .MuiGrid-spacing-xs-2{
+    justify-content: center !important;
+  }
   .grid-main-content {
     margin-left: 0px ;
     justify-content: center;
@@ -48,10 +52,9 @@
     .sidenav-container {
         margin-top: 10px;
         left: 0;
-        position: fixed;
     }
     .grid-main-content{
-        margin-left: 350px !important;
+        margin-left: 20px !important;
     }
     
   }

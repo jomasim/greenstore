@@ -19,6 +19,7 @@ export const fetchCategorySuccess = payload => ({
 
 
 const fetchCategories = ({ payload }) => dispatch => {
+  dispatch(fetchCategoryRequest(payload))
   api
     .fetchCategories(payload)
     .then(response => {

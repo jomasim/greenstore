@@ -8,6 +8,8 @@ import AppBar from "../../components/AppBar";
 import Sidenav from "../../components/Sidenav";
 import "./home.css";
 import fetchCategories from "../../actions/category";
+import veges from "../../assets/images/vg.png";
+import fruits from "../../assets/images/fruits.png";
 
 class Home extends Component {
   state = {};
@@ -22,7 +24,15 @@ class Home extends Component {
         id: "646463",
         category: "Vegetables",
         samples: ["kales", "spinach", "managu", "cabbage"],
-        imageUrl: ""
+        imageUrl: "",
+        image:veges
+      },
+      {
+        id: "63446463",
+        category: "Fruits",
+        samples: ["Mangoes", "Grapes", "Lemon", "Oranges"],
+        imageUrl: "",
+        image:fruits
       }
     ];
     return (
@@ -47,12 +57,12 @@ class Home extends Component {
                 );
               })}
           </Grid>
-          <Grid container className="footer-container">
-            <h3> Get in Touch </h3>
-            <small>Westalands, Nairobi 0100 Block A</small>
-            <small>Infogreen@gmail.com</small>
-            <hr className="line" />
-          </Grid>
+        </Grid>
+        <Grid container className="footer-container">
+          <h3> Get in Touch </h3>
+          <small>Westalands, Nairobi 0100 Block A</small>
+          <small>Infogreen@gmail.com</small>
+          <hr className="line" />
         </Grid>
       </div>
     );
