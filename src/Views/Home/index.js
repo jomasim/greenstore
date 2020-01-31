@@ -18,6 +18,11 @@ class Home extends Component {
     getCategories({});
   }
 
+  handleNavigate = () => {
+    const { history } = this.props;
+    history.push('/products')
+  };
+
   render() {
     const items = [
       {
@@ -25,14 +30,14 @@ class Home extends Component {
         category: "Vegetables",
         samples: ["kales", "spinach", "managu", "cabbage"],
         imageUrl: "",
-        image:veges
+        image: veges
       },
       {
         id: "63446463",
         category: "Fruits",
         samples: ["Mangoes", "Grapes", "Lemon", "Oranges"],
         imageUrl: "",
-        image:fruits
+        image: fruits
       }
     ];
     return (
@@ -53,7 +58,12 @@ class Home extends Component {
             {items &&
               items.map(item => {
                 return (
-                  <ItemCard key={item.id} className="item-card" data={item} />
+                  <ItemCard
+                    key={item.id}
+                    className="item-card"
+                    data={item}
+                    handleNavigate={this.handleNavigate}
+                  />
                 );
               })}
           </Grid>

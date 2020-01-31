@@ -3,7 +3,7 @@ import Button from "@material-ui/core/Button";
 import ArrowForward from "@material-ui/icons/ArrowForward";
 import "./card.css";
 
-export default function ItemCard({ data }) {
+export default function ItemCard({ data, handleNavigate }) {
   return (
     <div className="card">
       <div className="card-header">
@@ -14,7 +14,7 @@ export default function ItemCard({ data }) {
           <img src={data.image} alt="...loading" className="product-image" />
         </div>
         <div className="card-text">
-          <p>{ data.samples.join(",") || '' }</p>
+          <p>{data.samples.join(",") || ""}</p>
         </div>
       </div>
       <div className="card-footer">
@@ -22,6 +22,7 @@ export default function ItemCard({ data }) {
           variant="contained"
           className="more-btn"
           endIcon={<ArrowForward />}
+          onClick={() => handleNavigate()}
         >
           View more
         </Button>
