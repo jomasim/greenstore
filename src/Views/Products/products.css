@@ -1,0 +1,11 @@
+.header {
+  margin-top: 100px;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: row;
+}
+.header h3 {
+  display: flex;
+  font-weight: 400;
+  color: #343534;
+}

@@ -10,7 +10,7 @@ import logo from "../../../src/assets/images/logo.svg";
 import MenuItem from "@material-ui/core/MenuItem";
 import "./appbar.css";
 
-export default function ButtonAppBar() {
+export default function ButtonAppBar({ itemCount }) {
   return (
     <div>
       <AppBar position="fixed" className="menu">
@@ -23,7 +23,7 @@ export default function ButtonAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <div className="menu-items"> 
+          <div className="menu-items">
             <img src={logo} alt="store" className="logo"></img>
             <MenuItem className="menu-item active">Home</MenuItem>
             <MenuItem className="menu-item">Market</MenuItem>
@@ -35,7 +35,7 @@ export default function ButtonAppBar() {
               </IconButton>{" "}
               |
               <IconButton edge="end" color="inherit" aria-label="search">
-                <Badge color="error" badgeContent="2">
+                <Badge color="secondary" className="badge-count" badgeContent={itemCount}>
                   <ShoppingBasket />
                 </Badge>
               </IconButton>

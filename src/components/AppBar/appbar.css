@@ -26,6 +26,9 @@
 span.MuiTab-wrapper {
   font-weight: 600;
 }
+.badge-count .MuiBadge-colorSecondary {
+  background-color: #4e904a;
+}
 .menu-right {
   margin-left: auto !important;
   align-self: center;
