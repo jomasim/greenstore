@@ -10,7 +10,7 @@ export default function ItemCard({ data, handleNavigate }) {
         <span className="card-title">{data.category || ""}</span>
       </div>
       <div className="card-content">
-        <div className="media">
+        <div>
           <img src={data.image} alt="...loading" className="product-image" />
         </div>
         <div className="card-text">

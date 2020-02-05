@@ -18,10 +18,18 @@ class ProductsView extends Component {
     const { getProducts } = this.props;
     getProducts({});
   }
-  addToCart = count => {
+  addToCart = item => {
     const { addToCart, cart } = this.props;
-    const total = cart.count + count;
-    addToCart(total);
+    const { items } = cart;
+    const data = items.slice();
+    const index = data.findIndex(obj => obj.id === item.id);
+    if (index > -1) {
+      const count = data[index].count + item.count;
+      data[index] = { ...data[index], count };
+    } else {
+      data.push(item);
+    }
+    addToCart({ items: data });
   };
   removeFromCart = () => {};
   render() {
@@ -29,22 +37,22 @@ class ProductsView extends Component {
     const items = [
       {
         id: "646463",
-        category: "Broccoli",
+        productName: "Broccoli",
         samples: ["kales", "spinach", "managu", "cabbage"],
         imageUrl: "",
         image: broccoli
       },
       {
         id: "63446463",
-        category: "Cabbage",
+        productName: "Cabbage",
         samples: ["Mangoes", "Grapes", "Lemon", "Oranges"],
         imageUrl: "",
         image: cabbage
       }
     ];
     return (
-      <div>
-        <AppBar itemCount={cart.count} />
+      <div className="main-container">
+        <AppBar itemCount={cart.total} />
         <div className="header">
           <h3>
             Horticulture <NavigateNextIcon />
@@ -89,7 +97,7 @@ const mapStateToProps = ({ products, cart }) => ({
 
 const mapDispatchToProps = dispatch => ({
   getProducts: payload => dispatch(fetchProducts(payload)),
-  addToCart: count => dispatch(addItemsToCart({ count }))
+  addToCart: items => dispatch(addItemsToCart(items))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductsView);

@@ -11,6 +11,10 @@ export const removeFromCartSuccess = payload => ({
   payload
 });
 
-export const addItemsToCart = payload => addToCartSuccess(payload);
+export const addItemsToCart = payload => {
+  const { items } = payload;
+  const total = items.reduce((total, obj) => total + obj.count, 0);
+  return addToCartSuccess({ items, total });
+};
 
 export const RemoveItemsFromCart = payload => removeFromCartSuccess(payload);
