@@ -8,9 +8,9 @@ import Sidenav from "../../components/Sidenav";
 import "../Home/home.css";
 import "./products.css";
 import fetchProducts from "../../actions/products";
-import { addItemsToCart } from "../../actions/cart";
+import { updateCart } from "../../actions/cart";
 import broccoli from "../../assets/images/broccoli.png";
-import cabbage from "../../assets/images/cabbage.png";
+import tomatoes from "../../assets/images/tomatoes.png";
 
 class ProductsView extends Component {
   state = {};
@@ -19,7 +19,7 @@ class ProductsView extends Component {
     getProducts({});
   }
   addToCart = item => {
-    const { addToCart, cart } = this.props;
+    const { updateCart, cart } = this.props;
     const { items } = cart;
     const data = items.slice();
     const index = data.findIndex(obj => obj.id === item.id);
@@ -29,7 +29,7 @@ class ProductsView extends Component {
     } else {
       data.push(item);
     }
-    addToCart({ items: data });
+    updateCart({ items: data });
   };
   removeFromCart = () => {};
   render() {
@@ -38,16 +38,18 @@ class ProductsView extends Component {
       {
         id: "646463",
         productName: "Broccoli",
-        samples: ["kales", "spinach", "managu", "cabbage"],
+        unit: "125 gm",
+        unitPrice: 58,
         imageUrl: "",
         image: broccoli
       },
       {
         id: "63446463",
-        productName: "Cabbage",
-        samples: ["Mangoes", "Grapes", "Lemon", "Oranges"],
+        productName: "Tomatoes",
+        unit: "1 Kg",
+        unitPrice: 126,
         imageUrl: "",
-        image: cabbage
+        image: tomatoes
       }
     ];
     return (
@@ -97,7 +99,7 @@ const mapStateToProps = ({ products, cart }) => ({
 
 const mapDispatchToProps = dispatch => ({
   getProducts: payload => dispatch(fetchProducts(payload)),
-  addToCart: items => dispatch(addItemsToCart(items))
+  updateCart: items => dispatch(updateCart(items))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductsView);

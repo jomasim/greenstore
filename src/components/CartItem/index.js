@@ -20,19 +20,22 @@ class CartItem extends Component {
     }
   }
 
-  handleAdd = () => {
-    const { count, unitPrice } = this.state;
-    this.setState({ count: count + 1, total: unitPrice * (count + 1) });
-  };
-  handleRemove = () => {
-    const { count, unitPrice } = this.state;
-    if (count > 0) {
-      this.setState({ count: count - 1, total: unitPrice * (count - 1) });
+  updateCart = type => {
+    const { count, unitPrice, id } = this.state;
+    const { handleUpdateCart } = this.props;
+    if (type === "increase") {
+      this.setState({ count: count + 1, total: unitPrice * (count + 1) });
+    } else if (type === "reduce") {
+      if (count > 0) {
+        this.setState({ count: count - 1, total: unitPrice * (count - 1) });
+      }
     }
+    handleUpdateCart(id, type);
   };
+
   render() {
-    const { count, total, name, unit, image, id } = this.state;
-    const { handleRemoveItem } = this.props;
+    const { count, total, productName, unit, image, id } = this.state;
+    const { handleCancelItem } = this.props;
     return (
       <div>
         <div className="cart-card">
@@ -40,22 +43,25 @@ class CartItem extends Component {
             <img src={image} alt="loading..." />
           </div>
           <div className="description">
-            <h4>{name}</h4>
+            <h4>{productName}</h4>
             <small>{unit}</small>
           </div>
           <div className="quantity">
             <RemoveIcon
               className="removeIcon"
-              onClick={() => this.handleRemove()}
+              onClick={() => this.updateCart("reduce")}
             />
             <span className="count">{count}</span>
-            <AddIcon className="addIcon" onClick={() => this.handleAdd()} />
+            <AddIcon
+              className="addIcon"
+              onClick={() => this.updateCart("increase")}
+            />
           </div>
           <div className="amount">
-            <span>Ksh {total.toString()}</span>
+            <span>Ksh {total.toString()}.00</span>
           </div>
           <div className="close-container">
-            <CancelIcon onClick={() => handleRemoveItem(id)} />
+            <CancelIcon onClick={() => handleCancelItem(id)} />
           </div>
         </div>
         <hr className="divider"></hr>

@@ -67,7 +67,11 @@ export default class PaymentForm extends React.Component {
               className="card-input footer-input secure"
             />
           </div>
-          <input type="submit" className="request-btn card-pay" value="Make payment" />
+          <input
+            type="submit"
+            className="request-btn card-pay"
+            value="Make payment"
+          />
         </form>
       </div>
     );

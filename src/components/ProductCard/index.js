@@ -32,7 +32,7 @@ class ProductCard extends Component {
     }
   };
   render() {
-    const { image, productName, count } = this.state;
+    const { image, productName, count, unit, unitPrice } = this.state;
     return (
       <div className="card">
         <div className="card-content">
@@ -42,10 +42,10 @@ class ProductCard extends Component {
         </div>
         <div className="card-footer">
           <span className="card-title">{productName || ""}</span>
-          <span className="price"> Ksh 100 </span>
+          <span className="price"> Ksh {unitPrice}.00 </span>
         </div>
         <div>
-          <small className="unit">185g</small>
+          <small className="unit">{unit}</small>
         </div>
         <div className="lower-footer">
           <div className="manage-cart">

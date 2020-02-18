@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from "../actions/cart";
+import { UPDATE_CART, REMOVE_FROM_CART } from "../actions/cart";
 
 const initialState = {
   items: []
@@ -7,7 +7,7 @@ const initialState = {
 const cart = (state = initialState, action) => {
   const { payload } = action;
   switch (action.type) {
-    case ADD_TO_CART:
+    case UPDATE_CART:
       return { ...state, ...payload };
     case REMOVE_FROM_CART:
       return { ...state, ...payload };

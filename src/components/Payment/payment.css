@@ -37,26 +37,26 @@
   border: 0;
   border-radius: 5px;
 }
-.order-container{
-    display: flex;
-    flex-direction: row;
+.order-container {
+  display: flex;
+  flex-direction: row;
 }
 .order-label {
-    margin-right: 10px;
-    font-size: 18px;
-    color: #ffffdc;
+  margin-right: 10px;
+  font-size: 18px;
+  color: #ffffdc;
 }
 .order-number {
-    color: #bbbd3c;
-    font-size: 20px;
-    margin-left: auto;
+  color: #bbbd3c;
+  font-size: 20px;
+  margin-left: auto;
 }
 .card-container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
 }
 .credit-card-header {
-    color: #fff;
-    font-weight: 500;
+  color: #fff;
+  font-weight: 500;
 }

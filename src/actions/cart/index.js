@@ -1,8 +1,8 @@
-export const ADD_TO_CART = "ADD_TO_CART";
+export const UPDATE_CART = "UPDATE_CART";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 
-export const addToCartSuccess = payload => ({
-  type: ADD_TO_CART,
+export const updateCartSuccess = payload => ({
+  type: UPDATE_CART,
   payload
 });
 
@@ -11,10 +11,11 @@ export const removeFromCartSuccess = payload => ({
   payload
 });
 
-export const addItemsToCart = payload => {
+export const updateCart = payload => {
   const { items } = payload;
   const total = items.reduce((total, obj) => total + obj.count, 0);
-  return addToCartSuccess({ items, total });
+  localStorage.setItem("CART",  JSON.stringify({ items, total }) );
+  return updateCartSuccess({ items, total });
 };
 
 export const RemoveItemsFromCart = payload => removeFromCartSuccess(payload);
