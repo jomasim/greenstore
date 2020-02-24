@@ -41,7 +41,7 @@ class Home extends Component {
       }
     ];
     return (
-      <div>
+      <div className="main-container">
         <AppBar />
         <div className="image-container">
           <span className="nearest">

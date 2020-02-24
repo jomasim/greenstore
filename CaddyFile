@@ -1,0 +1,7 @@
+0.0.0.0:80 
+root ./builds
+rewrite {
+    to {path} {path}/ /index.html?{query}
+}
+log stdout
+errors stderr

@@ -1,5 +1,6 @@
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
+import {Link} from 'react-router-dom'
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import SearchIcon from "@material-ui/icons/SearchSharp";
@@ -10,7 +11,7 @@ import logo from "../../../src/assets/images/logo.svg";
 import MenuItem from "@material-ui/core/MenuItem";
 import "./appbar.css";
 
-export default function ButtonAppBar({ itemCount }) {
+export default function ButtonAppBar({ itemCount = 0 }) {
   return (
     <div>
       <AppBar position="fixed" className="menu">
@@ -32,9 +33,9 @@ export default function ButtonAppBar({ itemCount }) {
             <div className="menu-right">
               <IconButton edge="end" color="inherit" aria-label="search">
                 <SearchIcon />
-              </IconButton>{" "}
+              </IconButton>
               |
-              <IconButton edge="end" color="inherit" aria-label="search">
+              <IconButton edge="end" color="inherit" aria-label="search" component={Link} to="/shopping-cart">
                 <Badge color="secondary" className="badge-count" badgeContent={itemCount}>
                   <ShoppingBasket />
                 </Badge>

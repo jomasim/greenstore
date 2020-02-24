@@ -1,0 +1,56 @@
+.cart-card {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+}
+.media {
+  height: 100px;
+  display: flex;
+  width: 120px;
+  align-items: center;
+}
+.media img {
+  width: 100px;
+  height: auto;
+}
+.description {
+  width: 250px;
+}
+.description h4 {
+  font-weight: 400;
+}
+.description small {
+  color: #50504e;
+}
+.quantity {
+  display: flex;
+  align-items: center;
+  width: 200px;
+}
+span.count {
+  color: #838685;
+}
+.amount {
+  display: flex;
+  align-items: center;
+  width: 200px;
+}
+.amount span {
+  font-weight: 500;
+  color: #2a2b2b;
+}
+.close-container {
+  display: flex;
+  align-items: center;
+  width: 50px;
+  cursor: pointer;
+}
+.close-container svg.MuiSvgIcon-root {
+  color: #807c7c;
+}
+hr.divider {
+  height: 1px;
+  width: 95%;
+  background: #ece9e9;
+  border: none;
+}

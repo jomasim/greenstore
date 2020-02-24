@@ -1,0 +1,34 @@
+#PaymentForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.credit-form {
+  margin-top: 40px;
+  width: 100%;
+}
+.card-input {
+  width: 100%;
+  height: 30px;
+  border: 0;
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 2px;
+  margin-bottom: 10px;
+}
+.credit-form-footer {
+  display: flex;
+  flex-direction: row;
+}
+input.card-input.footer-input.secure {
+  margin-left: auto !important;
+  margin-right: 0px !important;
+}
+.footer-input {
+  width: 40% !important;
+  margin-right: 20px;
+}
+.card-pay{
+    width: 100%;
+}

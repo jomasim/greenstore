@@ -8,9 +8,9 @@ import Sidenav from "../../components/Sidenav";
 import "../Home/home.css";
 import "./products.css";
 import fetchProducts from "../../actions/products";
-import { addItemsToCart } from "../../actions/cart";
+import { updateCart } from "../../actions/cart";
 import broccoli from "../../assets/images/broccoli.png";
-import cabbage from "../../assets/images/cabbage.png";
+import tomatoes from "../../assets/images/tomatoes.png";
 
 class ProductsView extends Component {
   state = {};
@@ -18,10 +18,18 @@ class ProductsView extends Component {
     const { getProducts } = this.props;
     getProducts({});
   }
-  addToCart = count => {
-    const { addToCart, cart } = this.props;
-    const total = cart.count + count;
-    addToCart(total);
+  addToCart = item => {
+    const { updateCart, cart } = this.props;
+    const { items } = cart;
+    const data = items.slice();
+    const index = data.findIndex(obj => obj.id === item.id);
+    if (index > -1) {
+      const count = data[index].count + item.count;
+      data[index] = { ...data[index], count };
+    } else {
+      data.push(item);
+    }
+    updateCart({ items: data });
   };
   removeFromCart = () => {};
   render() {
@@ -29,22 +37,24 @@ class ProductsView extends Component {
     const items = [
       {
         id: "646463",
-        category: "Broccoli",
-        samples: ["kales", "spinach", "managu", "cabbage"],
+        productName: "Broccoli",
+        unit: "125 gm",
+        unitPrice: 58,
         imageUrl: "",
         image: broccoli
       },
       {
         id: "63446463",
-        category: "Cabbage",
-        samples: ["Mangoes", "Grapes", "Lemon", "Oranges"],
+        productName: "Tomatoes",
+        unit: "1 Kg",
+        unitPrice: 126,
         imageUrl: "",
-        image: cabbage
+        image: tomatoes
       }
     ];
     return (
-      <div>
-        <AppBar itemCount={cart.count} />
+      <div className="main-container">
+        <AppBar itemCount={cart.total} />
         <div className="header">
           <h3>
             Horticulture <NavigateNextIcon />
@@ -89,7 +99,7 @@ const mapStateToProps = ({ products, cart }) => ({
 
 const mapDispatchToProps = dispatch => ({
   getProducts: payload => dispatch(fetchProducts(payload)),
-  addToCart: count => dispatch(addItemsToCart({ count }))
+  updateCart: items => dispatch(updateCart(items))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductsView);
