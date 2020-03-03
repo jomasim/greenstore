@@ -105,7 +105,7 @@ class ShoppingCart extends Component {
                 className={"proceed-btn"}
                 endIcon={<ArrowForward />}
                 component={Link}
-                to="/products"
+                to="/checkout"
               >
                 Proceed to checkout
               </Button>

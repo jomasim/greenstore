@@ -1,0 +1,28 @@
+.MuiStepIcon-root.MuiStepIcon-active {
+  color: #4e904a !important;
+}
+.MuiStepIcon-root.MuiStepIcon-completed {
+  color: #4e904a !important;
+}
+.previous-btn {
+  color: #fff !important;
+  background: #565555 !important;
+  cursor: pointer !important;
+  text-transform: capitalize !important;
+}
+.proceed-btn {
+  color: #565555 !important;
+  background: #fff !important;
+  cursor: pointer;
+  text-transform: capitalize !important;
+  border: 1px #565555 !important;
+  margin-left: auto !important;
+  margin-right: 0px !important;
+}
+
+.MuiStepper-horizontal {
+  background: #565555 !important;
+}
+.MuiStepLabel-labelContainer span {
+  color: #fff !important;
+}

@@ -1,0 +1,22 @@
+.bill-info-form {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 20px;
+  min-height: 600px;
+}
+.bill-info-form .MuiFormControl-root.MuiTextField-root {
+  margin-top: 30px;
+}
+.row-form-items {
+  display: flex;
+  flex-direction: row;
+}
+.MuiFormControl-root.MuiTextField-root.row-input-left {
+  margin-left: auto;
+}
+.bill-form-footer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+}
